@@ -32,19 +32,20 @@ namespace apyAllia20260401
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            lblInfo.Text =  "Codigo: " +maskedTxtCodigo.Text 
+            lblInfo.Text =  "Codigo: " + maskedTxtCodigo.Text 
             + " /  Nombre: " + txtNombre.Text + "\n"  + " /  Descripcion: " 
             + txtDescripcion.Text + " \n " + " /  Precio: " + maskedTxtPrecio.Text + " /  Stock: " 
             + maskedTxtStock.Text + " /  Categoria: " + cmbGestion.Text ;
-
 
             varCodigo = maskedTxtCodigo.Text;
             varNombre = txtNombre.Text;
             varDescripcion = txtDescripcion.Text;
             //es para que se comvierta el texto a numero entero, ya que el maskedTxtPrecio es un tipo de dato string
-            varPrecio = Convert.ToInt16(maskedTxtPrecio.Text);
-            varStock = Convert.ToInt16(maskedTxtStock.Text);
+            varPrecio = Convert.ToInt32(maskedTxtPrecio.Text);
+            varStock = Convert.ToInt32(maskedTxtStock.Text);
             varCategoria = cmbGestion.Text;
+
+            MessageBox.Show("Producto cargado correctamente.", "Gestión de Productos.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
